@@ -1,0 +1,32 @@
+jwt:
+  secret: mysupercomplexsecret
+
+server:
+  error:
+    path: /user/error
+    whitelabel:
+      enabled: false
+spring:
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/securecapita
+    password: 2142ek2143EK
+    username: root
+  jpa:
+    database-platform: org.hibernate.dialect.MySQLDialect # I have changed this part with down one Corrected typo
+    generate-ddl: true
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+      properties:
+        logging.level.root: INFO
+        logging.level.org.springframework: DEBUG
+        logging.level.your.package: TRACE
+        hibernate:
+          globally_quoted_identifiers: true  # Corrected typo
+          dialect: org.hibernate.dialect.MySQLDialect
+          format_sql: true
+
+  sql:
+    init:
+      mode: never
+      continue-on-error: false
